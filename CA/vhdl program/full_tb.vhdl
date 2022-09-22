@@ -4,12 +4,10 @@ use ieee.std_logic_1164.all;
 entity full_tb is 
 end full_tb;
 
-
 architecture test of full_tb is
 	component ful 
 	port (
-	
-		a:in std_ulogic;
+	    a:in std_ulogic;
 		b:in std_ulogic;
 		c:in std_ulogic;
 		sum: out std_ulogic;
@@ -19,7 +17,6 @@ end component;
 signal a,b,c,sum,carry: std_ulogic;
 begin
 	full_tb:ful port map(a=>a,b=>b,c=>c,carry=>carry,sum=>sum);
-	
 	process begin 
 	
 		a<= 'X';
@@ -69,7 +66,4 @@ begin
 		assert false report "Reach end";
 		wait;
 	end process;
-end test;
-		
-		
-		
+end test;	
