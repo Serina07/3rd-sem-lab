@@ -1,0 +1,39 @@
+
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+void main()
+{
+  int gm,gd=DETECT,i,j;
+  initgraph(&gd,&gm,"C:/TC/BGI");
+  for(j=0;j<3;j++)
+  {
+  for(i=0;i<100;i++)
+  {
+  delay(20);
+  cleardevice();
+  circle(100,100+i,50);
+  setfillstyle(SOLID_FILL,RED);
+  floodfill(101,101+i,15);
+  }
+  for(i=0;i<100;i++)
+  {
+  delay(10);
+  cleardevice();
+  circle(100,200-i,50);
+  setfillstyle(SOLID_FILL,RED);
+  floodfill(101,201-i,15);
+  }
+  }
+  for(i=0;i<100;i++)
+  {
+  delay(20);
+  cleardevice();
+  circle(100,100+i,50);
+  setfillstyle(SOLID_FILL,RED);
+  floodfill(101,101+i,15);
+  }
+getch();
+closegraph();
+}
